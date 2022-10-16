@@ -7,19 +7,42 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.mmccall.multicalc.controllers.MainView">
-    <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@styles/font.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.mmccall.multicalc.controllers.MainView">
+    <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" useSystemMenuBar="true">
         <Menu mnemonicParsing="false" text="File">
-            <MenuItem mnemonicParsing="false" text="Open..." />
-            <Menu mnemonicParsing="false" text="Open Recent" />
+         <MenuItem mnemonicParsing="false" onAction="#onNewWindow" text="New Window">
+            <accelerator>
+               <KeyCodeCombination alt="UP" code="N" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+            </accelerator>
+         </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#onOpen" text="Open...">
+            <accelerator>
+               <KeyCodeCombination alt="UP" code="O" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+            </accelerator></MenuItem>
+            <Menu fx:id="openRecentMenu" mnemonicParsing="false" text="Open Recent" />
             <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" onAction="#onSave" text="Save">
+            <accelerator>
+               <KeyCodeCombination alt="UP" code="S" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+            </accelerator></MenuItem>
             <MenuItem mnemonicParsing="false" text="Save As..." />
         </Menu>
         <Menu mnemonicParsing="false" text="Edit">
+         <MenuItem mnemonicParsing="false" text="Undo">
+            <accelerator>
+               <KeyCodeCombination alt="UP" code="Z" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+            </accelerator>
+         </MenuItem>
+         <MenuItem mnemonicParsing="false" text="Redo">
+            <accelerator>
+               <KeyCodeCombination alt="UP" code="Z" control="UP" meta="DOWN" shift="DOWN" shortcut="UP" />
+            </accelerator>
+         </MenuItem>
+         <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" text="Cut" />
             <MenuItem mnemonicParsing="false" text="Copy" />
             <MenuItem mnemonicParsing="false" text="Paste" />
@@ -30,6 +53,7 @@
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
             <MenuItem mnemonicParsing="false" text="About" />
+         <MenuItem mnemonicParsing="false" text="View MulitCalc on GitHub" />
         </Menu>
     </MenuBar>
     <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">

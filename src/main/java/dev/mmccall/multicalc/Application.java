@@ -1,35 +1,37 @@
 package dev.mmccall.multicalc;
 
-import dev.mmccall.multicalc.math.Add;
-import dev.mmccall.multicalc.math.Expression;
-import dev.mmccall.multicalc.math.Value;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        Value val1 = new Value(2);
-        Value val2 = new Value(3);
-
-        Add add = new Add(val1, val2);
-        Expression result = add.evaluate();
-
-        System.out.println(((Value) result).value());
+        Font.loadFont(Objects.requireNonNull(Application.class.getResource("fonts/inter/Inter.ttf")).toExternalForm(), 13);
 
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("main-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        
-        stage.setTitle("MultiCalc");
-        stage.setScene(scene);
-        stage.show();
+
+        Application.stage = stage;
+
+        Application.stage.setTitle("MultiCalc");
+        Application.stage.setScene(scene);
+        Application.stage.show();
     }
 
     public static void main(String[] args) {
         launch();
     }
+
+    public static Stage getStage()
+    {
+        return stage;
+    }
+
+    private static Stage stage;
 }
