@@ -1,14 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="dev.mmccall.multicalc.controllers.ScientificView"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+      xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="dev.mmccall.multicalc.controllers.ScientificView">
+   <WebView fx:id="simpleDisplay" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0"
+            VBox.vgrow="ALWAYS"/>
+   <GridPane hgap="8.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+             minWidth="-Infinity" vgap="8.0" VBox.vgrow="ALWAYS">
+      <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+      </rowConstraints>
+      <padding>
+         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+      </padding>
+      <VBox.margin>
+         <Insets/>
+      </VBox.margin>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" onAction="#onSevenButtonClicked" text="7"
+              GridPane.rowIndex="1"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" onAction="#onEightButtonClicked" text="8"
+              GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" onAction="#onNineButtonClicked" text="9"
+              GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" onAction="#onFourButtonClicked" text="4"
+              GridPane.rowIndex="2"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" onAction="#onFiveButtonClicked" text="5"
+              GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" onAction="#onSixButtonClicked" text="6"
+              GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" onAction="#onOneButtonClicked" text="1"
+              GridPane.rowIndex="3"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" onAction="#onTwoButtonClicked" text="2"
+              GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" onAction="#onThreeButtonClicked" text="3"
+              GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" onAction="#onFourButtonClicked" text="0"
+              GridPane.columnSpan="2" GridPane.rowIndex="4"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" text="." GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" text="*" GridPane.columnIndex="3"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddButtonClicked" text="+"
+              GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" text="=" GridPane.columnIndex="3" GridPane.rowIndex="3"
+              GridPane.rowSpan="2"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" text="Clear"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" text="+/-" GridPane.columnIndex="1"/>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" mnemonicParsing="false" text="÷" GridPane.columnIndex="2"/>
+   </GridPane>
+</VBox>
