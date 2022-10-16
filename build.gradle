@@ -13,7 +13,7 @@ repositories {
 }
 
 ext {
-    junitVersion = '5.8.2'
+    junitVersion = '5.9.0'
 }
 
 sourceCompatibility = '17'
@@ -35,10 +35,10 @@ javafx {
 
 dependencies {
     implementation('org.controlsfx:controlsfx:11.1.1')
-    implementation('net.synedra:validatorfx:0.3.1') {
+    implementation('net.synedra:validatorfx:0.4.0') {
         exclude(group: 'org.openjfx')
     }
-    implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'org.jetbrains:annotations:23.0.0'
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
