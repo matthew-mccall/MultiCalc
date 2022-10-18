@@ -43,12 +43,21 @@
             </accelerator>
          </MenuItem>
          <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Cut" />
-            <MenuItem mnemonicParsing="false" text="Copy" />
-            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Cut">
+            <accelerator>
+               <KeyCodeCombination alt="UP" code="X" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+            </accelerator></MenuItem>
+            <MenuItem mnemonicParsing="false" text="Copy">
+            <accelerator>
+               <KeyCodeCombination alt="UP" code="C" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+            </accelerator></MenuItem>
+            <MenuItem mnemonicParsing="false" text="Paste">
+            <accelerator>
+               <KeyCodeCombination alt="UP" code="V" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+            </accelerator></MenuItem>
         </Menu>
         <Menu mnemonicParsing="false" text="Functions">
-            <MenuItem mnemonicParsing="false" text="Function Builder ..." />
+            <MenuItem mnemonicParsing="false" text="Compose ..." />
             <MenuItem mnemonicParsing="false" text="Solve For" />
         </Menu>
         <Menu mnemonicParsing="false" text="Help">

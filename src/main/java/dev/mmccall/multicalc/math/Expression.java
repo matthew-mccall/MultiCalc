@@ -1,9 +1,15 @@
 package dev.mmccall.multicalc.math;
 
-import org.jetbrains.annotations.Nullable;
+import dev.mmccall.multicalc.HTMLRenderable;
 
-public interface Expression {
+import java.util.function.Consumer;
+
+public interface Expression extends HTMLRenderable {
 
     Expression evaluate();
+    Expression copy();
+    Expression addChild(Expression child);
+    void forEachChild(Consumer<Expression> function);
+    void recurseForEachChild(Consumer<Expression> function);
 
 }
